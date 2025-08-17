@@ -2,11 +2,13 @@
 Bart Massey and Google Gemini Flash 2025
 
 This grotty code uses a simple heuristic (more than 5 lines
-of more than 100 characters in the buffer) to turn on
-`visual-line-mode` on text or Markdown buffers in emacs.
+of at least 100 characters in the buffer, or a single line
+of at least 150 characters) to turn on `visual-line-mode` on
+text or Markdown buffers in emacs. The heuristic parameters
+can be set to taste.
 
 I have more and more Markdown, in particular, that needs to
-be wrapped, but the majority of my Markdown does not.
+be wrapped. However, the majority of my Markdown does not.
 
 ## Usage
 

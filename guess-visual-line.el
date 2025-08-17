@@ -15,6 +15,11 @@ that must be present in a buffer for `visual-line-mode` to be activated."
   :type 'integer
   :group 'visual-line)
 
+(defcustom guess-visual-line-force-nchars 150
+  "The minimum length a single line must be to enforce visual-line mode."
+  :type 'integer
+  :group 'visual-line)
+
 (defun guess-visual-line ()
   "Enable `visual-line-mode` if the buffer contains a sufficient number of long lines.
 The thresholds are controlled by `guess-visual-line-nchars` and
@@ -36,7 +41,9 @@ The thresholds are controlled by `guess-visual-line-nchars` and
           ; Move to the next line
           (forward-line 1)
 
-          (when (>= long-line-count guess-visual-line-nlines)
+          (when (or
+                 (>= line-length guess-visual-line-force-nchars)
+                 (>= long-line-count guess-visual-line-nlines))
             (visual-line-mode 1)
             (setq done t)))))))
 
