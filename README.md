@@ -1,19 +1,21 @@
-# emacs-guess-visual-line: autowrap text in emacs as needed
+# emacs-guess-wrapped-text: autowrap text in emacs as needed
 Bart Massey and Google Gemini Flash 2025
 
 This grotty code uses a simple heuristic (more than 5 lines
 of at least 100 characters in the buffer, or a single line
-of at least 150 characters) to turn on `visual-line-mode` on
-text or Markdown buffers in emacs. The heuristic parameters
-can be set to taste.
+of at least 150 characters) to turn on a "wrapped-text" mode
+on text or Markdown buffers in emacs: `visual-line-mode`
+with `auto-fill -1`. The heuristic parameters can be set to
+taste.
 
 I have more and more Markdown, in particular, that needs to
-be wrapped. However, the majority of my Markdown does not.
+be edited as wrapped. However, the majority of my Markdown
+does not.
 
 ## Usage
 
-Put `guess-visual-line.el` someplace where emacs can find
-it. Then add `(load-library "guess-visual-line")` to your
+Put `guess-wrapped-text.el` someplace where emacs can find
+it. Then add `(load-library "guess-wrapped-text")` to your
 `.emacs`.
 
 ## License
